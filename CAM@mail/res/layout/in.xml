@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#f9f9d2"
+    >
+    
+     <EditText
+        android:id="@+id/et1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/et2"
+        android:layout_alignParentLeft="true"
+        android:hint="name"
+        android:layout_marginBottom="14dp"
+         />
+
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bt"
+        android:layout_alignParentLeft="true"
+        android:hint="phoneno"
+        android:inputType="number"
+        android:layout_marginBottom="66dp"
+         >
+
+       
+    </EditText>
+
+    <Button
+        android:id="@+id/bt"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="62dp"
+        android:layout_marginLeft="28dp"
+        android:background="#0d82df"
+        android:onClick="sedmail"
+        android:text="@string/sendmail" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+         android:background="#0d82df"
+        android:layout_below="@+id/et2"
+        android:layout_marginRight="19dp"
+        android:onClick="camera"
+        android:text="Back" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_above="@+id/et1"
+        android:layout_alignLeft="@+id/bt"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/button1" />
+
+</RelativeLayout>
+
+
