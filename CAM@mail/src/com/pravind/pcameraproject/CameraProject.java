@@ -26,17 +26,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class CameraProject extends Activity {
+public class CameraProject extends Activity
+{
 	
 	Button button;
 	Bitmap btm;
 	Bitmap thumbnail;
 	String filePath;
-	  File pic;
+	File pic;
 	final static int CameraData = 0;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_camera_project);
 		button = (Button) findViewById(R.id.cont);
@@ -46,39 +48,42 @@ public class CameraProject extends Activity {
 
 	
 	//start camera activity
-	public void camera(View v) {
-		Intent i = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-		startActivityForResult(i, CameraData);
-				}
+	public void camera(View v) 
+		{
+			Intent i = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+			startActivityForResult(i, CameraData);
+		}
 	
 	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data){
-		super.onActivityResult(requestCode, resultCode, data);
-		if (resultCode == RESULT_OK) {
-			Bundle extras = data.getExtras();
-			btm = (Bitmap) extras.get("data");
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+		{
+			super.onActivityResult(requestCode, resultCode, data);
+			if (resultCode == RESULT_OK)
+			{
+				Bundle extras = data.getExtras();
+				btm = (Bitmap) extras.get("data");
 							
-		}
-		    if(resultCode == RESULT_OK)
-		    {
+			}
+		       if(resultCode == RESULT_OK)
+		    	{
 		    	//it moves to another activity
 				Intent intent1=new Intent (CameraProject.this,INF.class);
 								
 				startActivity(intent1);
 				
-	
-	}
-		    else {
+			}
+		      else 
+		    	{
 		    	//if discard it reopen camera activity
 		    	Intent i = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 				startActivityForResult(i, CameraData);
-		    }
-	
-	}
+		    	}
+		
+		}
 	
 		public void exit(View v)
-		{
-		finish();
-	}
+			{
+				finish();
+			}
 	
 }
